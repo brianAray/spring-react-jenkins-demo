@@ -32,7 +32,7 @@ pipeline {
                 dir('frontend') {
                     sh 'npm install'
                     // Inject Backend IP into React build
-                    sh "VITE_API_URL=http://${APP_SERVER_IP}:8080/api/items npm run build"
+                    sh "VITE_API_URL=http://${APP_SERVER_IP}:80/api/items npm run build"
                 }
             }
         }
@@ -70,7 +70,7 @@ pipeline {
                             docker rm spring-backend || true
                             docker run -d --name spring-backend \\
                                 --network jenkins-net \\
-                                -p 8080:8080 \\
+                                -p 80:8080 \\
                                 -e DB_HOST=postgres-db \\
                                 spring-backend
                         '
