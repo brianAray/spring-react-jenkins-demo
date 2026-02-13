@@ -34,27 +34,27 @@ function App() {
     }
 
     return (
-        <div style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: '2rem' }}>
+        <div>
             <h1>Jenkins CI/CD Demo</h1>
             <p>Deployed via Jenkins Pipeline to AWS S3 & EC2</p>
 
-            <div style={{ margin: '2rem auto', maxWidth: '600px', padding: '2rem', border: '1px solid #ccc', borderRadius: '8px' }}>
+            <div>
                 <h2>Items from Postgres DB</h2>
 
-                <div style={{ marginBottom: '1rem' }}>
+                <div>
                     <input
                         type="text"
                         value={newItem}
                         onChange={(e) => setNewItem(e.target.value)}
                         placeholder="New Item Name"
-                        style={{ padding: '0.5rem', marginRight: '0.5rem' }}
+                        
                     />
-                    <button onClick={addItem} style={{ padding: '0.5rem 1rem' }}>Add Item</button>
+                    <button onClick={addItem}>Add Item</button>
                 </div>
 
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+                <ul >
                     {items.map(item => (
-                        <li key={item.id} style={{ padding: '0.5rem', background: '#f5f5f5', margin: '0.5rem 0' }}>
+                        <li key={item.id}>
                             {item.id}: {item.name}
                         </li>
                     ))}
